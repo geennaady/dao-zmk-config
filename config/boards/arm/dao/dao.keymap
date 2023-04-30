@@ -112,10 +112,6 @@
                         >;
                 };
 
-                &mkp LCLK       &mkp RCLK
-                &mmv MOVE_UP    &mmv MOVE_DOWN
-                &mmv MOVE_LEFT  &mmv MOVE_RIGHT
-
                 mouse_layer {
 // -----------------------------------------------------------------------------------------
 // | RST | BLDR |     |     |     |     |     |   |     |     |     |     |     | BLDR | RST |
