@@ -27,7 +27,7 @@ macros {
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &tog MOU>
-                , <&kp LG(LS(LA(N1))>
+                , <&kp LG(LS(LA(N1)))>
                 ;
         };
 
@@ -37,7 +37,7 @@ macros {
                     #binding-cells = <0>;
                     bindings
                         = <&macro_tap &tog MOU>
-                        , <&kp LG(LS(LA(N2))>
+                        , <&kp LG(LS(LA(N2)))>
                         ;
                 };
 
@@ -47,7 +47,7 @@ macros {
                     #binding-cells = <0>;
                     bindings
                         = <&kp CAPS>
-                        , <&kp LG(LS(LA(N3))>
+                        , <&kp LG(LS(LA(N3)))>
                         ;
                 };
 };
