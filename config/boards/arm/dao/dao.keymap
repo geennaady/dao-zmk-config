@@ -19,8 +19,8 @@
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
-
-macros {
+/ {
+    macros {
         mouse_on: mouse_on {
             label = "mouse_on";
             compatible = "zmk,behavior-macro";
@@ -50,6 +50,7 @@ macros {
                         , <&kp LG(LS(LA(N3)))>
                         ;
                 };
+    };
 };
 
 / {
