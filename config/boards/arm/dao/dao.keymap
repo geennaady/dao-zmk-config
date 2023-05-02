@@ -187,9 +187,10 @@
 //   &lt NUM RET &lt NAV BSPC &lt SYM DEL
                         bindings = <
 //         0        1        2         3        4          5      5         4         3        2         1       0
-   &trans &none    &none     &none     &none    &none     &none   &none   &none     &none     &none    &none     &none   &none &trans
-          &none    &none     &none     &none    &none     &none   &none   &none     &none     &none    &none     &none   &none
-          &none    &none     &kp RET   &kp BSPC &kp DEL   &none   &none   &kp ESC   &kp SPACE &kp TAB  &none     &none   &none
+   &trans &none    &none     &none     &none    &none     &none   &none   &none     &none     &none    &none     &none &trans
+          &none    &none     &none     &none    &none     &none   &none   &none     &none     &none    &none     &none
+          &none    &none     &kp RET   &kp BSPC &kp DEL   &none   &none   &kp ESC   &kp SPACE &kp TAB  &none     &none
+
                                    &none &none &none        &none &none &none
                         >;
                 };
