@@ -16,9 +16,10 @@
 #define FUN 4
 #define MSC 5
 #define MOU 6
-
-&lt { quick_tap_ms = <200>; };
-&mt { quick_tap_ms = <200>; };
+#define WIN 7
+#define MOD 8
+&lt { quick_tap_ms = <300>; };
+&mt { quick_tap_ms = <300>; };
 / {
     macros {
         mouse_on: mouse_on {
@@ -65,10 +66,10 @@
 //                                       | SHFT |  SPACE | RSE |            | LWR |SFT/BSPC|RAISE|
                         bindings = <
 //         0        1       2            3            4             5               5          4           3           2           1         0
-    &trans &none    &kp Q   &kp W        &kp E        &kp R         &kp T           &kp Y      &kp U       &kp I       &kp O       &kp P     &kp LBKT &trans
+    &trans &mouse_on    &kp Q   &kp W        &kp E        &kp R         &kp T           &kp Y      &kp U       &kp I       &kp O       &kp P     &kp LBKT &trans
            &lang &mt LCTRL A   &mt LSHFT S  &mt LALT D   &mt LCTRL F   &mt LGUI G      &mt RGUI H &mt RCTRL J &mt RALT K  &mt RSHFT L &kp SEMI  &kp SQT
-           &mouse_on    &kp Z   &kp X        &kp C        &kp V         &kp B           &kp N      &kp M       &kp COMMA   &kp DOT     &kp FSLH  &kp RBKT
-                                     &lt FUN ESC  &lt MSC SPACE  &lt NUM TAB                &lt NUM RET &lt SYM BSPC &lt NAV DEL
+           &mo MOD   &kp Z   &kp X        &kp C        &kp V         &kp B           &kp N      &kp M       &kp COMMA   &kp DOT     &kp FSLH  &lt MOD RBKT
+                                     &lt MSC ESC  &lt FUN SPACE  &lt WIN TAB                &lt NUM RET &lt NAV BSPC &lt SYM DEL
                         >;
                 };
                 nav_layer {
@@ -78,11 +79,11 @@
 //        |   +     |  !    |   @   |   #   |   $   |   %   |                  |   ^   |   &   |    *     |   (   |   )   |  -  |
 //                                  |  GUI  |       |  GUI  |                  |  ENT  |       |  ALT  |
                         bindings = <
-//         0        1       2       3      4      5                     5         4        3        2         1       0
+//         0        1       2         3        4         5              5         4        3        2         1       0
    &trans &none     &none   &none     &none    &none     &none          &kp PG_UP &kp HOME &kp UP   &kp END   &kp INS &kp PSCRN  &trans
-          &none     &none   &kp LSHFT &kp LALT &kp LCTRL &kp LGUI       &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none   &kp RGUI
-          &none     &none   &none     &none    &none     &none          &none     &none    &none    &none     &none   &none
-                                    &kp RET &kp BSPC &kp DEL            &none &none &none
+          &none     &none   &kp LSHFT &kp LALT &kp LCTRL &kp LGUI       &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &none   &none
+          &none     &none   &none     &none    &none     &none          &none     &none   &none &none     &none   &none
+                                    &none &none &none            &none &none &none
                         >;
                 };
 
@@ -95,8 +96,8 @@
                         bindings = <
 //         0        1        2       3      4      5                 5         4         3        2         1       0
    &trans &none    &kp GRAVE &kp N7  &kp N8  &kp N9 &kp BSLH         &none     &none     &none    &none     &none   &none &trans
-          &none    &none     &kp N4  &kp N5  &kp N6 &kp LSHFT            &kp RGUI  &kp RCTRL &kp RALT &kp RSHFT &none   &none
-          &none    &none     &kp N1  &kp N2  &kp N3 &kp LGUI            &none     &none     &none    &none     &none   &none
+          &none    &none     &kp N4  &kp N5  &kp N6 &none            &kp RGUI  &kp RCTRL &kp RALT &kp RSHFT &none   &none
+          &none    &none     &kp N1  &kp N2  &kp N3 &none            &none     &none     &none    &none     &none   &none
                                    &kp MINUS &kp N0 &kp EQUAL        &none &none &none
                         >;
                 };
@@ -122,11 +123,11 @@
 //       |      |     |     |     |     |     |   |     |     |     |     |     |      |
 //                          |     |     |     |   |     |     |     |
                         bindings = <
-//         0        1        2       3      4      5               5         4         3        2         1         0
-   &trans &none    &none     &kp F7  &kp F8 &kp F9 &kp F12            &none     &none     &none    &none     &none &none &trans
-          &none    &none     &kp F4  &kp F5 &kp F6 &kp F11            &kp RGUI  &kp RCTRL &kp RALT &kp RSHFT &none     &none
-          &none    &none     &kp F1  &kp F2 &kp F3 &kp F10            &none     &none     &none    &none     &none     &none
-                                   &none &kp BSPC &kp RET               &none &none &none
+//         0                 1                     2       3      4      5                  5         4         3        2         1         0
+   &trans &none              &kp LG(F6))            &kp F7  &kp F8 &kp F9 &kp F12            &none     &none     &none    &none     &none &none &trans
+          &kp LC(LA(LEFT))   &kp LC(LA(RIGHT))     &kp F4  &kp F5 &kp F6 &kp F11            &kp RGUI  &kp RCTRL &kp RALT &kp RSHFT &none     &none
+          &none              &none                 &kp F1  &kp F2 &kp F3 &kp F10            &none     &none     &none    &none     &none     &none
+                                   &none &none &none               &none &none &none
                         >;
                 };
 
@@ -140,7 +141,7 @@
 //         0        1        2            3          4             5            5         4         3        2         1         0
    &trans &none     &none    &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP  &none        &none     &none     &none    &none     &none     &none &trans
           &none     &none    &kp C_PREV   &kp C_PP   &kp C_NEXT    &none        &none     &none     &none    &none     &none     &none
-          &none     &none    &none        &none      &kp C_BRI_DN  &kp C_BRI_UP &none     &none     &none    &none     &none     &none
+          &none     &none    &none        &kp C_BRI_DN  &kp C_BRI_UP &none &none     &none     &none    &none     &none     &none
                                    &none &none &none              &none &none &none
                         >;
                 };
@@ -153,10 +154,43 @@
 //                          |     |     |     |   |     |     |     |
                         bindings = <
 //         0        1        2              3              4               5    |5         4              3              2               1         0
-   &trans &none     &none    &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &none &none     &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &none     &none &trans
-          &none     &none    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none     &none
-          &mouse_off  &none    &none          &none          &none           &none &none     &none          &none          &none           &none     &none
+   &trans &mouse_off &none    &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &none &none     &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &none     &none &trans
+          &none      &none    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none     &none
+          &none      &none    &none          &mkp MCLK      &none           &none &none     &none          &mkp MCLK      &none           &none     &none
                                    &none &none &none              &none &none &none
+                        >;
+                };
+
+                moving_windows_layer {
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------
+// |     |    A+T        |   C+q    |   C+w   |   C+e   |   A+4   |    -    |                  | INS| BSPC| DEL| PGUP| SCLK| CLCK|     |
+//       |    C+A+T      |   C+a    |    |    |   TAB   |     .   |    ,    |                  | LEFT | DOWN|  UP | RGHT| INS | APP |
+//       |      @        |    ~     |   C+x   |   C+c   |   C+v   |   A+S   |                  | HOME| PGDN | PGUP| END| PAUS|     |
+//                                            |   ADJ   |         |         |                  | ADJ |     |     |
+//
+                        bindings = <
+//         0        1        2       3      4      5                 5         4         3        2         1       0
+   &trans &none    &none     &kp LG(N7)  &kp LG(N8)  &kp LG(N9) &none         &none     &none     &none    &none     &none   &none &trans
+          &none    &none     &kp LG(N4)  &kp LG(N5)  &kp LG(N6) &none            &none     &none     &none    &none     &none   &none
+          &none    &none     &kp LG(N1)  &kp LG(N2)  &kp LG(N3) &kp LSHFT        &none     &none     &none    &none     &none   &none
+                                   &none &none &none        &none &none &none
+                        >;
+                };
+        };
+
+                modifier_layer {
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------
+// |     |    A+T        |   C+q    |   C+w   |   C+e   |   A+4   |    -    |                  | INS| BSPC| DEL| PGUP| SCLK| CLCK|     |
+//       |    C+A+T      |   C+a    |    |    |   TAB   |     .   |    ,    |                  | LEFT | DOWN|  UP | RGHT| INS | APP |
+//       |      @        |    ~     |   C+x   |   C+c   |   C+v   |   A+S   |                  | HOME| PGDN | PGUP| END| PAUS|     |
+//                                            |   ADJ   |         |         |                  | ADJ |     |     |
+//   &lt NUM RET &lt NAV BSPC &lt SYM DEL
+                        bindings = <
+//         0        1        2         3        4          5      5         4         3        2         1       0
+   &trans &none    &none     &none     &none    &none     &none   &none   &none     &none     &none    &none     &none   &none &trans
+          &none    &none     &none     &none    &none     &none   &none   &none     &none     &none    &none     &none   &none
+          &none    &none     &kp RET   &kp BSPC &kp DEL   &none   &none   &kp ESC   &kp SPACE &kp TAB  &none     &none   &none
+                                   &none &none &none        &none &none &none
                         >;
                 };
         };
