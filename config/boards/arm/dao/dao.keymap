@@ -19,8 +19,8 @@
 #define WIN 7
 #define MOD 8
 #define NUMERIC 9
-&lt { quick_tap_ms = <400>; };
-&mt { quick_tap_ms = <400>; };
+&lt { quick_tap_ms = <300>; };
+&mt { quick_tap_ms = <300>; };
 / {
     macros {
         mouse_on: mouse_on {
