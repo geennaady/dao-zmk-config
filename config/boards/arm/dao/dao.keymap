@@ -168,11 +168,11 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
                 fun_layer { bindings = <
 //-----------------------------------------------------------------------------------------------------------------------------------
-//         0                1                 2              3            4           5          |        5       4        3       2        1       0
+//         0                1                 2              3            4           5          |     5       4        3       2        1       0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none             &kp SH(F6)      &&mt SHFT F7   &mt OPT F8   &mt CMD F9  &mt CTRL F12        &none   &none    &none   &none    &none   &none            &trans
-          &kp CT(OP(LL)) &kp CT(OP(RR)) &&mt SHFT F4   &mt OPT F5   &mt CMD F6  &mt CTRL F11        &kp CMD &kp CTRL &kp OPT &kp SHFT &none   &none
-          &none             &none             &&mt SHFT F1   &mt OPT F2   &mt CMD F3  &mt CTRL F10        &none   &none    &none   &none    &none   &none
+   &trans &none             &kp SH(F6)      &mt SHFT F7   &mt OPT F8   &mt CMD F9  &mt CTRL F12        &none   &none    &none   &none    &none   &none            &trans
+          &kp CT(OP(LL))    &kp CT(OP(RR))  &mt SHFT F4   &mt OPT F5   &mt CMD F6  &mt CTRL F11        &kp CMD &kp CTRL &kp OPT &kp SHFT &none   &none
+          &none             &none           &mt SHFT F1   &mt OPT F2   &mt CMD F3  &mt CTRL F10        &none   &none    &none   &none    &none   &none
                                                            &none &none &none        &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
