@@ -204,7 +204,7 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
    &trans &none &none      &mkp LCLK   &mmv MOU_UU   &mkp RCLK   &none        &none   &mkp LCLK   &mmv MOU_UU   &mkp RCLK   &none &none        &trans
           &none &mouse_off &mmv MOU_LL &mmv MOU_DD   &mmv MOU_RR &none        &none   &mmv MOU_LL &mmv MOU_DD   &mmv MOU_RR &none &none
-          &none &none      &mouse S(-1,-1) &mkp MCLK  &mouse S(1,1)    &none        &none   &mouse S(-1,-1)    &mkp MCLK     &mouse S(1,1)    &none &none
+          &none &none      &none       &mkp MCLK     &none       &none        &none   &none       &mkp MCLK     &none       &none &none
                                                   &none &none &none        &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
