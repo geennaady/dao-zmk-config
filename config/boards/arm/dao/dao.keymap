@@ -19,8 +19,6 @@
 #define WIN 7
 #define MOD 8
 #define CLC 9
-#define MSUP &mouse S(1,1)
-#define MSDN &mouse S(-1,-1)
 #define CMD LGUI
 #define OPT LALT
 #define CTRL LCTRL
@@ -206,7 +204,7 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
    &trans &none &none      &mkp LCLK   &mmv MOU_UU   &mkp RCLK   &none        &none   &mkp LCLK   &mmv MOU_UU   &mkp RCLK   &none &none        &trans
           &none &mouse_off &mmv MOU_LL &mmv MOU_DD   &mmv MOU_RR &none        &none   &mmv MOU_LL &mmv MOU_DD   &mmv MOU_RR &none &none
-          &none &none      &kp MSDN    &mkp MCLK     &kp MSUP    &none        &none   &kp MSDN    &mkp MCLK     &kp MSUP    &none &none
+          &none &none      &mouse S(-1,-1) &mkp MCLK  &mouse S(1,1)    &none        &none   &mouse S(-1,-1)    &mkp MCLK     &mouse S(1,1)    &none &none
                                                   &none &none &none        &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
