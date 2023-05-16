@@ -18,25 +18,25 @@
 #define MOU 6
 #define WIN 7
 #define MOD 8
-#define NUMERIC 9
+#define CLC 9
 #define MSUP &mouse S(1,1)
 #define MSDN &mouse S(-1,-1)
-#define ⌘ LGUI
-#define ⌥ LALT
-#define ⌃ LCTRL
-#define ⇧ LSHFT
-#define MS← MOVE_LEFT
-#define ← LEFT
-#define MS↓ MOVE_DOWN
-#define ↓ DOWN
-#define MS↑ MOVE_UP
-#define ↑ UP
-#define MS→ MOVE_RIGHT
-#define → RIGHT
-#define ⌘(x) LG(x)
-#define ⇧(x) LS(x)
-#define ⌥(x) LA(x)
-#define ⌃(x) LC(x)
+#define CMD LGUI
+#define OPT LALT
+#define CTRL LCTRL
+#define SHFT LSHFT
+#define MOU_LL MOVE_LEFT
+#define LL LEFT
+#define MOU_DD MOVE_DOWN
+#define DD DOWN
+#define MOU_UU MOVE_UP
+#define UU UP
+#define MOU_RR MOVE_RIGHT
+#define RR RIGHT
+#define CMD(x) LG(x)
+#define SHFT(x) LS(x)
+#define OPT(x) LA(x)
+#define CTRL(x) LC(x)
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
@@ -48,7 +48,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &tog MOU>
-                , <&kp ⌘(⇧(⌥(N1)))>
+                , <&kp CMD(SHFT(OPT(N1)))>
                 ;
         };
 
@@ -58,7 +58,7 @@
                     #binding-cells = <0>;
                     bindings
                         = <&macro_tap &tog MOU>
-                        , <&kp ⌘(⇧(⌥(N2)))>
+                        , <&kp CMD(SHFT(OPT(N2)))>
                         ;
                 };
 
@@ -68,7 +68,7 @@
                     #binding-cells = <0>;
                     bindings
                         = <&kp CAPS>
-                        , <&kp ⌘(⇧(⌥(N3)))>
+                        , <&kp CMD(SHFT(OPT(N3)))>
                         ;
                 };
 
@@ -77,8 +77,8 @@
                             compatible = "zmk,behavior-macro";
                             #binding-cells = <0>;
                             bindings
-                                = <&macro_tap &tog NUMERIC>
-                                , <&kp ⌘(⇧(⌥(N4)))>
+                                = <&macro_tap &tog CLC>
+                                , <&kp CMD(SHFT(OPT(N4)))>
                                 ;
                         };
        calc_off: calc_off {
@@ -86,8 +86,8 @@
                            compatible = "zmk,behavior-macro";
                            #binding-cells = <0>;
                            bindings
-                               = <&macro_tap &tog NUMERIC>
-                               , <&kp ⌘(⇧(⌥(N5)))>
+                               = <&macro_tap &tog CLC>
+                               , <&kp CMD(SHFT(OPT(N5)))>
                                ;
                        };
     };
@@ -99,12 +99,12 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
                 default_layer { bindings = <
 //-----------------------------------------------------------------------------------------------------------------------------------
-//         0         1       2         3         4         5      |     5         4        3          2        1         0
+//         0         1       2          3         4         5      |     5          4         3          2          1         0
 //-----------------------------------------------------------------------------------------------------------------------------------
-    &trans &mo MOD   &kp Q   &kp W     &kp E     &kp R     &kp T        &kp Y     &kp U    &kp I      &kp O    &kp P     &kp LBKT        &trans
-           &lang     &kp A   &mt ⇧ S   &mt ⌥ D   &mt ⌘ F   &mt ⌃ G      &mt ⌃ H   &mt ⌘ J  &mt ⌥ K    &mt ⇧ L  &kp SEMI  &kp SQT
-           &mo MOD   &kp Z   &kp X     &kp C     &kp V     &kp B        &kp N     &kp M    &kp COMMA  &kp DOT  &kp FSLH  &lt MOD RBKT
-                           &lt MSC ESC  &lt FUN SPACE  &lt WIN TAB      &lt NUM RET &lt NAV BSPC &lt SYM DEL
+    &trans &mo MOD   &kp Q   &kp W      &kp E     &kp R     &kp T        &kp Y      &kp U     &kp I      &kp O      &kp P     &kp LBKT        &trans
+           &lang     &kp A   &mt SHFT S &mt OPT D &mt CMD F &mt CTRL G   &mt CTRL H &mt CMD J &mt OPT K  &mt SHFT L &kp SEMI  &kp SQT
+           &mo MOD   &kp Z   &kp X      &kp C     &kp V     &kp B        &kp N      &kp M     &kp COMMA  &kp DOT    &kp FSLH  &lt MOD RBKT
+                           &lt NUM ESC  &lt FUN SPACE  &lt WIN TAB      &lt NUM RET &lt NAV BSPC &lt SYM DEL
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
                 };
@@ -118,9 +118,9 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
 //         0        1       2          3        4         5    |     5          4         3       2         1        0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none     &none   &none      &none    &none     &none      &kp PG_UP  &kp HOME  &kp ↑   &kp END   &kp INS  &kp PSCRN            &trans
-          &none     &none   &kp ⇧      &kp  ⌥   &kp ⌘     &kp ⌃      &kp PG_DN  &kp ←     &kp ↓   &kp →     &none    &none
-          &none     &none   &none      &none    &none     &none      &none      &none     &none   &none     &none    &none
+   &trans &none     &none   &none      &none    &none     &none      &kp PG_UP  &kp HOME  &kp UU   &kp END   &kp INS  &kp PSCRN            &trans
+          &none     &none   &kp SHFT   &kp OPT  &kp CMD   &kp CTRL   &kp PG_DN  &kp LL    &kp DD   &kp RR    &none    &none
+          &none     &none   &none      &none    &none     &none      &none      &none     &none    &none     &none    &none
                                               &none &none &none      &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
@@ -134,11 +134,11 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
                 num_layer { bindings = <
 //-----------------------------------------------------------------------------------------------------------------------------------
-//         0        1        2       3       4       5       |        5         4         3        2         1       0
+//         0        1        2            3           4           5       |        5         4         3        2         1       0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none    &kp GRAVE &kp N7  &kp N8  &kp N9  &kp BSLH         &none     &none     &none    &none     &none   &none                  &trans
-          &none    &none     &kp N4  &kp N5  &kp N6  &none            &kp ⌃     &kp ⌘     &kp ⌥    &kp ⇧     &none   &none
-          &none    &none     &kp N1  &kp N2  &kp N3  &none            &none     &none     &none    &none     &none   &none
+   &trans &none    &kp GRAVE &mt SHFT N7  &mt OPT N8  &mt CMD N9  &kp BSLH         &none     &none     &none    &none     &none   &none                  &trans
+          &none    &none     &mt SHFT N4  &mt OPT N5  &mt CMD N6  &kp CTRL         &kp CTRL  &kp CMD   &kp OPT  &kp SHFT  &none   &none
+          &mo MSC  &none     &mt SHFT N1  &mt OPT N2  &mt CMD N3  &none            &none     &none     &none    &none     &none   &none
                                    &kp MINUS &kp N0 &kp EQUAL         &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
@@ -151,11 +151,11 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
                 sym_layer { bindings = <
 //-----------------------------------------------------------------------------------------------------------------------------------
-//         0        1         2          3          4          5       |        5         4         3        2       1       0
+//         0        1         2          3          4          5       |        5         4         3        2        1       0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none    &kp TILDE  &kp AMPS   &kp STAR   &kp LPAR   &kp PIPE         &none     &none     &none    &none   &none   &none              &trans
-          &none    &none      &kp DLLR   &kp PRCNT  &kp CARET  &none            &kp ⌘     &kp ⌃     &kp ⌥    &kp ⇧   &none   &none
-          &none    &none      &kp EXCL   &kp AT     &kp HASH   &none            &none     &none     &none    &none   &none   &none
+   &trans &none    &kp TILDE  &kp AMPS   &kp STAR   &kp LPAR   &kp PIPE         &none     &none     &none    &none    &none   &none              &trans
+          &none    &none      &kp DLLR   &kp PRCNT  &kp CARET  &none            &kp CMD   &kp CTRL  &kp OPT  &kp SHFT &none   &none
+          &none    &none      &kp EXCL   &kp AT     &kp HASH   &none            &none     &none     &none    &none    &none   &none
                                             &kp UNDER &kp RPAR &kp PLUS         &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
@@ -168,11 +168,11 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
                 fun_layer { bindings = <
 //-----------------------------------------------------------------------------------------------------------------------------------
-//         0               1           2        3        4       5     |        5       4       3       2       1       0
+//         0                1                 2              3            4           5          |        5       4        3       2        1       0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none          &kp ⇧(F6)     &kp F7   &kp F8   &kp F9  &kp F12        &none   &none   &none   &none   &none   &none            &trans
-          &kp ⌃(⌥(←))    &kp ⌃(⌥(→))   &kp F4   &kp F5   &kp F6  &kp F11        &kp ⌘   &kp ⌃   &kp ⌥   &kp ⇧   &none   &none
-          &none          &none         &kp F1   &kp F2   &kp F3  &kp F10        &none   &none   &none   &none   &none   &none
+   &trans &none             &kp SHFT(F6)      &&mt SHFT F7   &mt OPT F8   &mt CMD F9  &mt CTRL F12        &none   &none    &none   &none    &none   &none            &trans
+          &kp CTRL(OPT(LL)) &kp CTRL(OPT(RR)) &&mt SHFT F4   &mt OPT F5   &mt CMD F6  &mt CTRL F11        &kp CMD &kp CTRL &kp OPT &kp SHFT &none   &none
+          &none             &none             &&mt SHFT F1   &mt OPT F2   &mt CMD F3  &mt CTRL F10        &none   &none    &none   &none    &none   &none
                                                            &none &none &none        &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
@@ -202,11 +202,11 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
                 mouse_layer { bindings = <
 //-----------------------------------------------------------------------------------------------------------------------------------
-//         0    1          2           3          4           5   |        5       4           3          2           1         0
+//         0    1          2           3             4           5   |        5       4           3             2           1     0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none &none      &mkp LCLK   &mmv MS↑   &mkp RCLK   &none        &none   &mkp LCLK   &mmv MS↑   &mkp RCLK   &none     &none        &trans
-          &none &mouse_off &mmv MS←    &mmv MS↓   &mmv MS→    &none        &none   &mmv MS←    &mmv MS↓   &mmv MS→    &none     &none
-          &none &none      &kp MSDN    &mkp MCLK  &kp MSUP    &none        &none   &kp MSDN    &mkp MCLK  &kp MSUP    &none     &none
+   &trans &none &none      &mkp LCLK   &mmv MOU_UU   &mkp RCLK   &none        &none   &mkp LCLK   &mmv MOU_UU   &mkp RCLK   &none &none        &trans
+          &none &mouse_off &mmv MOU_LL &mmv MOU_DD   &mmv MOU_RR &none        &none   &mmv MOU_LL &mmv MOU_DD   &mmv MOU_RR &none &none
+          &none &none      &kp MSDN    &mkp MCLK     &kp MSUP    &none        &none   &kp MSDN    &mkp MCLK     &kp MSUP    &none &none
                                                   &none &none &none        &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
@@ -219,12 +219,12 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
                 moving_windows_layer { bindings = <
 //-----------------------------------------------------------------------------------------------------------------------------------
-//         0      1       2             3             4              5    |       5       4       3       2       1       0
+//         0      1       2                 3                   4                   5    |    5       4       3       2       1       0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none   &none   &kp ⌘(⇧(N7))  &kp ⌘(⇧(N8))  &kp ⌘(⇧(N9))   &none        &none   &none   &none   &none   &none   &none          &trans
-          &none   &none   &kp ⌘(⇧(N4))  &kp ⌘(⇧(N5))  &kp ⌘(⇧(N6))   &none        &none   &none   &none   &none   &none   &none
-          &none   &none   &kp ⌘(⇧(N1))  &kp ⌘(⇧(N2))  &kp ⌘(⇧(N3))   &none        &none   &none   &none   &none   &none   &none
-                                                      &none &kp ⌘(⇧(N0)) &none        &none &none &none
+   &trans &none   &none   &kp CMD(SHFT(N7))  &kp CMD(SHFT(N8))  &kp CMD(SHFT(N9))   &none     &none   &none   &none   &none   &none   &none          &trans
+          &none   &none   &kp CMD(SHFT(N4))  &kp CMD(SHFT(N5))  &kp CMD(SHFT(N6))   &none     &none   &none   &none   &none   &none   &none
+          &none   &none   &kp CMD(SHFT(N1))  &kp CMD(SHFT(N2))  &kp CMD(SHFT(N3))   &none     &none   &none   &none   &none   &none   &none
+                                                      &none &kp CMD(SHFT(N0)) &none        &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
                 };
@@ -255,8 +255,8 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
 //         0        1           2        3        4        5       |      5           4          3        2        1        0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none     &calc_off   &kp N7   &kp N8   &kp N9   &kp BSLH       &kp PG_UP   &kp HOME   &kp ↑    &kp END  &kp INS  &kp PSCRN          &trans
-          &none     &kp ⇧       &kp N4   &kp N5   &kp N6   &kp FSLH       &kp PG_DN   &kp ←      &kp ↓    &kp →    &none    &none
+   &trans &none     &calc_off   &kp N7   &kp N8   &kp N9   &kp BSLH       &kp PG_UP   &kp HOME   &kp UU   &kp END  &kp INS  &kp PSCRN          &trans
+          &none     &kp SHFT    &kp N4   &kp N5   &kp N6   &kp FSLH       &kp PG_DN   &kp LL     &kp DD   &kp RR   &none    &none
           &none     &none       &kp N1   &kp N2   &kp N3   &none          &kp ESC     &kp SPACE  &kp TAB  &none    &none    &none
                                          &kp MINUS &kp N0 &kp EQUAL       &kp RET   &kp BSPC &kp DEL
 //-----------------------------------------------------------------------------------------------------------------------------------
