@@ -33,10 +33,10 @@
 #define UU UP
 #define MOU_RR MOVE_RIGHT
 #define RR RIGHT
-#define CMD(x) LG(x)
-#define SHFT(x) LS(x)
-#define OPT(x) LA(x)
-#define CTRL(x) LC(x)
+#define CM(x) LG(x)
+#define SH(x) LS(x)
+#define OP(x) LA(x)
+#define CT(x) LC(x)
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
@@ -48,7 +48,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &tog MOU>
-                , <&kp CMD(SHFT(OPT(N1)))>
+                , <&kp CM(SH(OP(N1)))>
                 ;
         };
 
@@ -58,7 +58,7 @@
                     #binding-cells = <0>;
                     bindings
                         = <&macro_tap &tog MOU>
-                        , <&kp CMD(SHFT(OPT(N2)))>
+                        , <&kp CM(SH(OP(N2)))>
                         ;
                 };
 
@@ -68,7 +68,7 @@
                     #binding-cells = <0>;
                     bindings
                         = <&kp CAPS>
-                        , <&kp CMD(SHFT(OPT(N3)))>
+                        , <&kp CM(SH(OP(N3)))>
                         ;
                 };
 
@@ -78,7 +78,7 @@
                             #binding-cells = <0>;
                             bindings
                                 = <&macro_tap &tog CLC>
-                                , <&kp CMD(SHFT(OPT(N4)))>
+                                , <&kp CM(SH(OP(N4)))>
                                 ;
                         };
        calc_off: calc_off {
@@ -87,7 +87,7 @@
                            #binding-cells = <0>;
                            bindings
                                = <&macro_tap &tog CLC>
-                               , <&kp CMD(SHFT(OPT(N5)))>
+                               , <&kp CM(SH(OP(N5)))>
                                ;
                        };
     };
@@ -170,8 +170,8 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
 //         0                1                 2              3            4           5          |        5       4        3       2        1       0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none             &kp SHFT(F6)      &&mt SHFT F7   &mt OPT F8   &mt CMD F9  &mt CTRL F12        &none   &none    &none   &none    &none   &none            &trans
-          &kp CTRL(OPT(LL)) &kp CTRL(OPT(RR)) &&mt SHFT F4   &mt OPT F5   &mt CMD F6  &mt CTRL F11        &kp CMD &kp CTRL &kp OPT &kp SHFT &none   &none
+   &trans &none             &kp SH(F6)      &&mt SHFT F7   &mt OPT F8   &mt CMD F9  &mt CTRL F12        &none   &none    &none   &none    &none   &none            &trans
+          &kp CT(OP(LL)) &kp CT(OP(RR)) &&mt SHFT F4   &mt OPT F5   &mt CMD F6  &mt CTRL F11        &kp CMD &kp CTRL &kp OPT &kp SHFT &none   &none
           &none             &none             &&mt SHFT F1   &mt OPT F2   &mt CMD F3  &mt CTRL F10        &none   &none    &none   &none    &none   &none
                                                            &none &none &none        &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -221,10 +221,10 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
 //         0      1       2                 3                   4                   5    |    5       4       3       2       1       0
 //-----------------------------------------------------------------------------------------------------------------------------------
-   &trans &none   &none   &kp CMD(SHFT(N7))  &kp CMD(SHFT(N8))  &kp CMD(SHFT(N9))   &none     &none   &none   &none   &none   &none   &none          &trans
-          &none   &none   &kp CMD(SHFT(N4))  &kp CMD(SHFT(N5))  &kp CMD(SHFT(N6))   &none     &none   &none   &none   &none   &none   &none
-          &none   &none   &kp CMD(SHFT(N1))  &kp CMD(SHFT(N2))  &kp CMD(SHFT(N3))   &none     &none   &none   &none   &none   &none   &none
-                                                      &none &kp CMD(SHFT(N0)) &none        &none &none &none
+   &trans &none   &none   &kp CM(SH(N7))  &kp CM(SH(N8))  &kp CM(SH(N9))   &none     &none   &none   &none   &none   &none   &none          &trans
+          &none   &none   &kp CM(SH(N4))  &kp CM(SH(N5))  &kp CM(SH(N6))   &none     &none   &none   &none   &none   &none   &none
+          &none   &none   &kp CM(SH(N1))  &kp CM(SH(N2))  &kp CM(SH(N3))   &none     &none   &none   &none   &none   &none   &none
+                                                      &none &kp CM(SH(N0)) &none        &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
                 };
