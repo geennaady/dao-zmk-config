@@ -230,7 +230,7 @@
           &none   &none   &kp CM(N4)  &kp CM(N5)  &kp CM(N6)   &none     &none   &none   &none   &none   &none   &none
           &none   &none   &kp CM(N1)  &kp CM(N2)  &kp CM(N3)   &none     &none   &none   &none   &none   &none   &none
 //-----------------------------------------------------------------------------------------------------------------------------------
-                                          &none &kp CM(SH(N0)) &none     &none &none &none
+                                              &none &kp CM(N0) &none     &none &none &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                         >;
                 };
