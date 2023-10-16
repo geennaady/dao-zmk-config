@@ -46,7 +46,6 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &tog MOU>
-                , <&kp CM(SH(OP(N1)))>
                 ;
         };
 
@@ -56,7 +55,6 @@
                     #binding-cells = <0>;
                     bindings
                         = <&macro_tap &tog MOU>
-                        , <&kp CM(SH(OP(N2)))>
                         ;
                 };
 
@@ -66,7 +64,6 @@
                     #binding-cells = <0>;
                     bindings
                         = <&kp CAPS>
-                        , <&kp CM(SH(OP(N3)))>
                         ;
                 };
 
@@ -76,7 +73,6 @@
                             #binding-cells = <0>;
                             bindings
                                 = <&macro_tap &tog CLC>
-                                , <&kp CM(SH(OP(N4)))>
                                 ;
                         };
        calc_off: calc_off {
@@ -85,7 +81,6 @@
                            #binding-cells = <0>;
                            bindings
                                = <&macro_tap &tog CLC>
-                               , <&kp CM(SH(OP(N5)))>
                                ;
                        };
     };
@@ -245,7 +240,7 @@
 //         0       1           2         3        4         5    |       5       4         3         2         1       0
 //-----------------------------------------------------------------------------------------------------------------------------------
    &trans &none    &calc_on    &none     &none    &none     &none        &none   &none     &none     &none     &none   &none &trans
-          &none    &mouse_on   &none     &none    &none     &none        &none   &none     &none     &none     &none   &none
+          &none    &mouse_on   &kp SHFT  &kp OPT  &kp CMD   &kp CTRL     &none   &none     &none     &none     &none   &none
           &none    &kp RET     &kp BSPC  &kp DEL  &none     &none        &none   &none     &kp ESC   &kp SPACE &kp TAB &none
 //-----------------------------------------------------------------------------------------------------------------------------------
                                                 &none &none &none        &none &none &none
